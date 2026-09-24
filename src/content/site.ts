@@ -5,7 +5,8 @@ export const site = {
   role: "Full-Stack Software Engineer",
   location: "Bengaluru, India",
   email: "simpisingh21@gmail.com",
-  resumeUrl: undefined,
+  // Older résumé for now; replace public/resume.pdf when the updated one is ready.
+  resume: { href: "/resume.pdf", fileName: "Simpi-Singh-Resume.pdf" },
   nav: [
     { label: "About", href: "/#about" },
     { label: "Experience", href: "/#experience" },

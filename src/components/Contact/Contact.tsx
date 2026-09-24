@@ -49,8 +49,8 @@ export function Contact() {
           >
             GitHub ↗
           </Button>
-          {site.resumeUrl && (
-            <Button href={site.resumeUrl} size="sm" download>
+          {site.resume && (
+            <Button href={site.resume.href} size="sm" download={site.resume.fileName}>
               Résumé ↓
             </Button>
           )}

@@ -24,19 +24,19 @@ export function Header() {
           ))}
         </ul>
 
-        {site.resumeUrl && (
+        {site.resume && (
           <Button
-            href={site.resumeUrl}
+            href={site.resume.href}
             variant="ghost"
             size="sm"
             className={styles.resume}
-            download
+            download={site.resume.fileName}
           >
             Résumé ↓
           </Button>
         )}
 
-        <MobileMenu items={site.nav} resumeUrl={site.resumeUrl} />
+        <MobileMenu items={site.nav} resume={site.resume} />
       </nav>
     </header>
   );

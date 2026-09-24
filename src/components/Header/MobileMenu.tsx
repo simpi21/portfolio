@@ -1,15 +1,15 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import type { NavItem } from "@/types/content";
+import type { NavItem, Resume } from "@/types/content";
 import styles from "./MobileMenu.module.css";
 
 type MobileMenuProps = {
   items: NavItem[];
-  resumeUrl?: string;
+  resume?: Resume;
 };
 
-export function MobileMenu({ items, resumeUrl }: MobileMenuProps) {
+export function MobileMenu({ items, resume }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
@@ -60,9 +60,9 @@ export function MobileMenu({ items, resumeUrl }: MobileMenuProps) {
             </a>
           </li>
         ))}
-        {resumeUrl && (
+        {resume && (
           <li>
-            <a href={resumeUrl} download onClick={close}>
+            <a href={resume.href} download={resume.fileName} onClick={close}>
               Résumé ↓
             </a>
           </li>

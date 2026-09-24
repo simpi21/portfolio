@@ -4,13 +4,18 @@ export type NavItem = {
   href: `/#${string}`;
 };
 
+export type Resume = {
+  href: string;
+  fileName: string;
+};
+
 export type SiteConfig = {
   name: string;
   role: string;
   location: string;
   email: string;
-  /** Path to the résumé in `public/`. Leave undefined until the PDF is added. */
-  resumeUrl?: string;
+  /** Résumé in `public/`; `fileName` is what the download is saved as. Omit to hide the buttons. */
+  resume?: Resume;
   nav: NavItem[];
   socials: {
     linkedin: string;

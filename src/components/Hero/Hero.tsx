@@ -44,8 +44,8 @@ export function Hero() {
 
           <div className={styles.actions}>
             <Button href="#projects">See my work ✦</Button>
-            {site.resumeUrl ? (
-              <Button href={site.resumeUrl} variant="ghost" download>
+            {site.resume ? (
+              <Button href={site.resume.href} variant="ghost" download={site.resume.fileName}>
                 Download résumé ↓
               </Button>
             ) : (
