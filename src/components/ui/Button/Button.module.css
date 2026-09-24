@@ -1,0 +1,60 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    transform var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease;
+}
+
+.button:hover {
+  transform: translate(-2px, -2px);
+}
+
+.button:active {
+  transform: translate(2px, 2px);
+}
+
+.md {
+  padding: 13px 24px;
+  font-size: 15px;
+}
+
+.sm {
+  padding: 8px 16px;
+  font-size: 13.5px;
+}
+
+.primary {
+  background: var(--color-matcha);
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-rose);
+}
+
+.primary:hover {
+  box-shadow: 5px 5px 0 var(--color-rose);
+}
+
+.ghost {
+  background: var(--color-surface);
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.ghost:hover {
+  box-shadow: 5px 5px 0 var(--shadow-matcha);
+}
+
+/* Pressed state — declared after :hover so it wins while clicking */
+.primary:active {
+  box-shadow: 1px 1px 0 var(--color-rose);
+}
+
+.ghost:active {
+  box-shadow: 1px 1px 0 var(--line);
+}

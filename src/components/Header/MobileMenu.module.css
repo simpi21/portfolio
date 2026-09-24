@@ -1,0 +1,91 @@
+/* Only shown on small screens; the panel positions itself against the nav pill */
+.root {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .root {
+    display: block;
+  }
+}
+
+.toggle {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: var(--border-width) solid var(--line);
+  border-radius: 50%;
+  background: var(--color-surface);
+}
+
+/* Two-line icon that morphs into an X */
+.icon {
+  position: relative;
+  width: 16px;
+  height: 10px;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition:
+    transform var(--duration) var(--ease-out),
+    top var(--duration) var(--ease-out);
+}
+
+.icon::before {
+  top: 0;
+}
+
+.icon::after {
+  top: calc(100% - 2px);
+}
+
+.icon[data-open="true"]::before,
+.icon[data-open="true"]::after {
+  top: calc(50% - 1px);
+}
+
+.icon[data-open="true"]::before {
+  transform: rotate(45deg);
+}
+
+.icon[data-open="true"]::after {
+  transform: rotate(-45deg);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  padding: 10px;
+  border: var(--border-width) solid var(--line);
+  border-radius: 24px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.panel[hidden] {
+  display: none;
+}
+
+.panel a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+}
+
+.panel a:hover,
+.panel a:focus-visible {
+  background: var(--color-surface-2);
+  color: var(--color-matcha);
+}

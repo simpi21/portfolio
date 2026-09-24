@@ -1,20 +1,200 @@
-/* Placeholder base styles — design tokens arrive in Milestone 2. */
+/* ==========================================================================
+   Design tokens — "Matcha & Rose", matte finish, soft neo-brutalism
+   ========================================================================== */
 :root {
   color-scheme: dark;
-  --background: #0a0a0a;
-  --foreground: #ededed;
+
+  /* Palette */
+  --color-bg: #151614;
+  --color-surface: #1c1d1a;
+  --color-surface-2: #232420;
+  --color-border: #31332d;
+  --color-text: #efeee6;
+  --color-muted: #b3b2a6;
+  --color-subtle: #83827a;
+  --color-matcha: #b8c99a;
+  --color-rose: #e0a6ae;
+  --color-ink: #1f2a10; /* text on matcha / rose */
+
+  /* Neo-brutalist lines and flat offset shadows */
+  --line: color-mix(in srgb, var(--color-text) 20%, var(--color-bg));
+  --shadow-matcha: color-mix(in srgb, var(--color-matcha) 60%, var(--color-bg));
+  --shadow-rose: color-mix(in srgb, var(--color-rose) 60%, var(--color-bg));
+  --shadow-card: 6px 6px 0 var(--shadow-matcha);
+  --shadow-card-hover: 9px 9px 0 var(--shadow-matcha);
+  --border-width: 1.5px;
+
+  /* Type */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --display-variation: "SOFT" 100, "WONK" 1;
+
+  /* Shape and layout */
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-pill: 999px;
+  --container: 1160px;
+  --gutter: 24px;
+  --header-offset: 96px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --duration-fast: 0.15s;
+  --duration: 0.25s;
 }
 
-* {
+/* ==========================================================================
+   Base
+   ========================================================================== */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  min-height: 100vh;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: system-ui, sans-serif;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+}
+
+/* Paper-grain texture that gives the matte finish */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--color-matcha);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-matcha);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-offset);
+}
+
+/* ==========================================================================
+   Utilities
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 420;
+  letter-spacing: -0.03em;
+  font-variation-settings: var(--display-variation);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--color-matcha);
+}
+
+.accent {
+  color: var(--color-matcha);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--color-matcha);
+  color: var(--color-ink);
+  font-weight: 500;
+  transform: translateY(-200%);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 20px;
+    --header-offset: 88px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

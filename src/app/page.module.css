@@ -1,0 +1,34 @@
+/* Temporary styles for the Milestone 2 placeholder page */
+.intro {
+  padding-block: 110px 80px;
+}
+
+.title {
+  margin: 8px 0 24px;
+  font-size: clamp(3.6rem, 10.5vw, 7.6rem);
+  line-height: 0.92;
+}
+
+.lead {
+  max-width: 560px;
+  font-size: clamp(1.1rem, 2.1vw, 1.3rem);
+  color: var(--color-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.stub {
+  padding-block: 90px;
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+.heading {
+  margin-top: 14px;
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  line-height: 1.02;
+}

@@ -1,0 +1,82 @@
+.wrap {
+  position: sticky;
+  top: 14px;
+  z-index: 50;
+  margin-top: 14px;
+  padding-inline: 16px;
+}
+
+.nav {
+  position: relative;
+  width: min(100%, 800px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 8px 8px 20px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 4px 4px 0 var(--shadow-matcha);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  padding-block: 8px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.bracket {
+  color: var(--color-matcha);
+}
+
+.star {
+  display: inline-block;
+  margin-left: 6px;
+  color: var(--color-rose);
+  transition: transform 0.6s var(--ease-out);
+}
+
+.logo:hover .star {
+  transform: rotate(180deg);
+}
+
+.links {
+  display: flex;
+  gap: 2px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.links a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  color: var(--color-muted);
+  transition:
+    color var(--duration) ease,
+    background var(--duration) ease;
+}
+
+.links a:hover {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+}
+
+@media (max-width: 760px) {
+  .nav {
+    padding-left: 18px;
+  }
+
+  .links,
+  .resume {
+    display: none;
+  }
+}
