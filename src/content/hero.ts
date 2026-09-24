@@ -13,7 +13,7 @@ export const hero = {
     { value: "5", label: "companies" },
     { value: "IBM", label: "currently" },
   ],
-  stickers: { top: "♡ pretty UIs", bottom: "⎈ k8s whisperer" },
+  stickers: { top: "✦ React · TypeScript · Node.js", bottom: "⎈ cloud-native & on-prem" },
   terminal: [
     { kind: "command", parts: [{ text: "whoami" }] },
     {
@@ -70,9 +70,9 @@ export const hero = {
     {
       kind: "output",
       parts: [
-        { text: '  "loves"', tone: "key" },
+        { text: '  "focus"', tone: "key" },
         { text: ": ", tone: "dim" },
-        { text: '"pretty UIs & scalable systems ♡"', tone: "string" },
+        { text: '"system design & distributed systems"', tone: "string" },
       ],
     },
     { kind: "output", parts: [{ text: "}", tone: "dim" }] },
