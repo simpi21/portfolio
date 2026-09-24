@@ -1,0 +1,20 @@
+/* Placeholder base styles — design tokens arrive in Milestone 2. */
+:root {
+  color-scheme: dark;
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
