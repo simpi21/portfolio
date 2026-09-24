@@ -52,6 +52,11 @@
   line-height: 1.12;
 }
 
+/* Keep "IBM (ISDL)" on one line */
+.nowrap {
+  white-space: nowrap;
+}
+
 .small {
   margin-top: 10px;
   font-size: 14px;

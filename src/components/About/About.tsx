@@ -29,7 +29,7 @@ export function About() {
             <span className={styles.dot} aria-hidden="true" /> currently
           </p>
           <p className={`display ${styles.big}`}>
-            Building at <span className="accent">{about.current.company}</span>
+            Building at <span className={`accent ${styles.nowrap}`}>{about.current.company}</span>
           </p>
           <p className={styles.small}>{about.current.detail}</p>
         </Card>

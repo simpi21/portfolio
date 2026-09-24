@@ -4,7 +4,7 @@ import type { Role } from "@/types/content";
 // they render as bullet points automatically.
 export const experience = [
   {
-    company: "IBM",
+    company: "IBM (ISDL)",
     title: "Software Engineer",
     focus: "Full-Stack & On-Premises Engineering",
     location: "Bengaluru",

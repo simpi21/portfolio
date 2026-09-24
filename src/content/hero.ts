@@ -11,7 +11,7 @@ export const hero = {
   stats: [
     { value: "~8", label: "years building" },
     { value: "5", label: "companies" },
-    { value: "IBM", label: "currently" },
+    { value: "IBM (ISDL)", label: "currently" },
   ],
   stickers: { top: "✦ React · TypeScript · Node.js", bottom: "⎈ cloud-native & on-prem" },
   terminal: [
@@ -27,7 +27,7 @@ export const hero = {
       parts: [
         { text: '  "role"', tone: "key" },
         { text: ": ", tone: "dim" },
-        { text: '"Software Engineer @ IBM"', tone: "string" },
+        { text: '"Software Engineer @ IBM (ISDL)"', tone: "string" },
         { text: ",", tone: "dim" },
       ],
     },
