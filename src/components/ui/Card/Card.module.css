@@ -1,0 +1,36 @@
+.card {
+  position: relative;
+  padding: 30px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+}
+
+.matcha {
+  box-shadow: 6px 6px 0 var(--shadow-matcha);
+}
+
+.matcha:hover {
+  box-shadow: 9px 9px 0 var(--shadow-matcha);
+}
+
+.rose {
+  box-shadow: 6px 6px 0 var(--shadow-rose);
+}
+
+.rose:hover {
+  box-shadow: 9px 9px 0 var(--shadow-rose);
+}
+
+@media (max-width: 760px) {
+  .card {
+    padding: 24px;
+  }
+}

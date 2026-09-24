@@ -151,6 +151,34 @@ section[id] {
   color: var(--color-matcha);
 }
 
+.section {
+  padding-block: 110px;
+}
+
+/* Scroll reveal, CSS only: fades in as it enters the viewport. Browsers without
+   scroll-driven animations (or with reduced motion) just show the content.
+   Animates `translate`, not `transform`, so it never fights hover transforms. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 35%;
+    }
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    translate: 0 16px;
+  }
+  to {
+    opacity: 1;
+    translate: none;
+  }
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -182,6 +210,10 @@ section[id] {
   :root {
     --gutter: 20px;
     --header-offset: 88px;
+  }
+
+  .section {
+    padding-block: 80px;
   }
 }
 

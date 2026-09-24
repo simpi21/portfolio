@@ -1,0 +1,146 @@
+.wrap {
+  position: relative;
+  max-width: 560px;
+}
+
+.terminal {
+  overflow: hidden;
+  border: var(--border-width) solid var(--line);
+  border-radius: 20px;
+  background: var(--color-surface);
+  box-shadow: 8px 8px 0 var(--shadow-rose);
+  transform: rotate(1.8deg);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out);
+}
+
+.wrap:hover .terminal {
+  transform: rotate(0deg) translate(-3px, -3px);
+  box-shadow: 11px 11px 0 var(--shadow-rose);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-bottom: var(--border-width) solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-subtle);
+}
+
+.bar i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--color-subtle);
+}
+
+.bar i:nth-child(1) {
+  background: var(--color-matcha);
+}
+
+.bar i:nth-child(2) {
+  background: var(--color-rose);
+}
+
+.bar span {
+  margin-inline: auto;
+  transform: translateX(-24px);
+}
+
+.body {
+  padding: 20px 22px 26px;
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  line-height: 1.85;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.prompt,
+.string {
+  color: var(--color-matcha);
+}
+
+.key {
+  color: var(--color-rose);
+}
+
+.dim {
+  color: var(--color-subtle);
+}
+
+/* Typed-later text: invisible but still takes up its space */
+.pending {
+  visibility: hidden;
+}
+
+/* Net-zero width (8px + 1px − 9px) so the caret never changes how a line wraps */
+.caret {
+  display: inline-block;
+  width: 8px;
+  height: 1.15em;
+  margin-left: 1px;
+  margin-right: -9px;
+  vertical-align: -3px;
+  background: var(--color-matcha);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.sticker {
+  position: absolute;
+  z-index: 2;
+  padding: 8px 15px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.stickerTop {
+  top: -18px;
+  right: -12px;
+  rotate: 6deg;
+  border: var(--border-width) solid var(--color-ink);
+  background: var(--color-matcha);
+  color: var(--color-ink);
+  box-shadow: 3px 3px 0 var(--color-bg);
+}
+
+.stickerBottom {
+  bottom: -18px;
+  left: -16px;
+  rotate: -4deg;
+  border: var(--border-width) solid var(--line);
+  background: var(--color-surface-2);
+  box-shadow: 3px 3px 0 var(--shadow-matcha);
+}
+
+@media (max-width: 760px) {
+  .terminal {
+    transform: none;
+  }
+
+  .body {
+    padding: 16px;
+    font-size: 12px;
+  }
+
+  .stickerTop {
+    right: 10px;
+  }
+
+  .stickerBottom {
+    left: 10px;
+  }
+}

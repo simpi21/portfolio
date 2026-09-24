@@ -16,3 +16,32 @@ export type SiteConfig = {
     github: string;
   };
 };
+
+export type Stat = {
+  value: string;
+  label: string;
+};
+
+export type TerminalTone = "prompt" | "key" | "string" | "dim";
+
+export type TerminalLine = {
+  /** Commands are typed character by character; output lines appear whole. */
+  kind: "command" | "output";
+  parts: Array<{ text: string; tone?: TerminalTone }>;
+};
+
+export type HeroContent = {
+  availability: string;
+  greeting: string;
+  tagline: { before: string; highlight: string; after: string };
+  stats: Stat[];
+  stickers: { top: string; bottom: string };
+  terminal: TerminalLine[];
+};
+
+export type AboutContent = {
+  /** Paragraphs support `**bold**` emphasis. */
+  paragraphs: string[];
+  current: { company: string; detail: string };
+  interests: string[];
+};

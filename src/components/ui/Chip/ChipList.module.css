@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-2);
+  font-size: 13.5px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dot);
+}
+
+.chip:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--dot);
+}
+
+.matcha {
+  --dot: var(--color-matcha);
+}
+
+.rose {
+  --dot: var(--color-rose);
+}

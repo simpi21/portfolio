@@ -1,0 +1,142 @@
+.hero {
+  position: relative;
+  padding-block: 110px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Calm motion: sparkles are still, just a soft accent */
+.sparkle {
+  position: absolute;
+  font-size: 16px;
+  color: var(--color-matcha);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.rose {
+  color: var(--color-rose);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 16px 7px 12px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  box-shadow: 2px 2px 0 var(--shadow-matcha);
+  font-size: 13px;
+}
+
+/* The one looping animation kept in calm mode: a meaningful "available" signal */
+.pulse {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-matcha);
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--color-matcha);
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.greeting {
+  margin-top: 30px;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+.title {
+  margin: 8px 0 28px;
+  font-size: clamp(3.6rem, 10.5vw, 7.6rem);
+  line-height: 0.92;
+}
+
+.title em {
+  padding-right: 0.08em;
+}
+
+.lead {
+  max-width: 560px;
+  font-size: clamp(1.1rem, 2.1vw, 1.3rem);
+  color: var(--color-muted);
+}
+
+.highlight {
+  color: var(--color-text);
+  font-weight: 500;
+  box-shadow: inset 0 -2px 0 var(--color-matcha);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin-top: 46px;
+}
+
+/* Value above label visually; label first in the markup for screen readers */
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.stat dt {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--color-subtle);
+}
+
+.stat dd {
+  margin-bottom: 6px;
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--color-matcha);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 72px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-block: 64px 80px;
+  }
+
+  /* No room for decoration beside the text on phones */
+  .sparkle {
+    display: none;
+  }
+}

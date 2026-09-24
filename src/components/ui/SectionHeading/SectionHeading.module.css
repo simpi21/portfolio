@@ -1,0 +1,16 @@
+.heading {
+  margin-bottom: 52px;
+}
+
+.title {
+  max-width: 800px;
+  margin-top: 14px;
+  font-size: clamp(2.4rem, 5.6vw, 4rem);
+  line-height: 1.02;
+}
+
+@media (max-width: 760px) {
+  .heading {
+    margin-bottom: 36px;
+  }
+}

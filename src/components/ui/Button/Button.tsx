@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
+import { cx } from "@/lib/cx";
 import styles from "./Button.module.css";
 
 type ButtonProps = ComponentPropsWithoutRef<"a"> & {
@@ -14,12 +15,8 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const classes = [styles.button, styles[variant], styles[size], className]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <a className={classes} {...props}>
+    <a className={cx(styles.button, styles[variant], styles[size], className)} {...props}>
       {children}
     </a>
   );
