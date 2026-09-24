@@ -1,10 +1,10 @@
 import { About } from "@/components/About/About";
+import { Experience } from "@/components/Experience/Experience";
 import { Hero } from "@/components/Hero/Hero";
 import styles from "./page.module.css";
 
-// Sections still to build — each is replaced by its real component in Milestones 4–6.
+// Sections still to build — each is replaced by its real component in Milestones 5–6.
 const upcoming = [
-  { id: "experience", index: 2, label: "Experience" },
   { id: "projects", index: 3, label: "Work" },
   { id: "skills", index: 4, label: "Skills" },
   { id: "contact", index: 5, label: "Contact" },
@@ -15,6 +15,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
+      <Experience />
       {upcoming.map((section) => (
         <section key={section.id} id={section.id} className={`container ${styles.stub}`}>
           <p className="eyebrow">

@@ -39,6 +39,27 @@ export type HeroContent = {
   terminal: TerminalLine[];
 };
 
+/** Year and month, e.g. "2025-05". */
+export type YearMonth = `${number}-${number}`;
+
+export type Role = {
+  company: string;
+  title: string;
+  /** Extra detail after the title, e.g. "Full-Stack & On-Premises Engineering". */
+  focus?: string;
+  location: string;
+  start: YearMonth;
+  /** Omit for the current role. */
+  end?: YearMonth;
+  /** Short description; supports `**bold**`. */
+  summary?: string;
+  /** Impact bullet points; support `**bold**`. */
+  highlights?: string[];
+  stack?: string[];
+  /** Playful commit message shown in mono, e.g. for the first role. */
+  message?: string;
+};
+
 export type AboutContent = {
   /** Paragraphs support `**bold**` emphasis. */
   paragraphs: string[];
