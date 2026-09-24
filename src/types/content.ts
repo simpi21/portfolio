@@ -39,6 +39,7 @@ export type TerminalLine = {
 export type HeroContent = {
   availability: string;
   greeting: string;
+  /** `after` follows the highlight directly, so include its leading space or punctuation. */
   tagline: { before: string; highlight: string; after: string };
   stats: Stat[];
   stickers: { top: string; bottom: string };

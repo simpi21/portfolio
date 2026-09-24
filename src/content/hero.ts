@@ -4,9 +4,9 @@ export const hero = {
   availability: "Open to new opportunities",
   greeting: "hi there, i'm",
   tagline: {
-    before: "Frontend-first full-stack engineer crafting",
-    highlight: "pixel-perfect interfaces",
-    after: "with React, TypeScript, Node.js & Go.",
+    before: "Frontend engineer.",
+    highlight: "Full-stack when it matters",
+    after: ". Currently building at IBM (ISDL).",
   },
   stats: [
     { value: "~8", label: "years building" },

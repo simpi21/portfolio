@@ -38,7 +38,7 @@ export function Hero() {
             {firstName} <em className="accent">{lastName}</em>
           </h1>
           <p className={styles.lead}>
-            {hero.tagline.before} <span className={styles.highlight}>{hero.tagline.highlight}</span>{" "}
+            {hero.tagline.before} <span className={styles.highlight}>{hero.tagline.highlight}</span>
             {hero.tagline.after}
           </p>
 
