@@ -152,7 +152,7 @@ section[id] {
 }
 
 .section {
-  padding-block: 110px;
+  padding-block: 88px;
 }
 
 /* Scroll reveal, CSS only: fades in as it enters the viewport. Browsers without
@@ -213,7 +213,7 @@ section[id] {
   }
 
   .section {
-    padding-block: 80px;
+    padding-block: 64px;
   }
 }
 

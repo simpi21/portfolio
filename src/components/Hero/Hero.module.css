@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  padding-block: 110px;
+  padding-block: 110px 64px;
 }
 
 .grid {
@@ -132,7 +132,7 @@
 
 @media (max-width: 760px) {
   .hero {
-    padding-block: 64px 80px;
+    padding-block: 64px 56px;
   }
 
   /* No room for decoration beside the text on phones */
