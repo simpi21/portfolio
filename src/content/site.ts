@@ -7,11 +7,11 @@ export const site = {
   email: "simpisingh21@gmail.com",
   resumeUrl: undefined,
   nav: [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Work", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Experience", href: "/#experience" },
+    { label: "Work", href: "/#projects" },
+    { label: "Skills", href: "/#skills" },
+    { label: "Contact", href: "/#contact" },
   ],
   socials: {
     linkedin: "https://www.linkedin.com/in/simpi-singh",

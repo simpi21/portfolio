@@ -1,6 +1,7 @@
 export type NavItem = {
   label: string;
-  href: `#${string}`;
+  /** Root-relative so links also work from other pages, e.g. the 404 page. */
+  href: `/#${string}`;
 };
 
 export type SiteConfig = {

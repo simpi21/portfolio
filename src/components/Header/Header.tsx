@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/Button/Button";
 import { site } from "@/content/site";
 import { MobileMenu } from "./MobileMenu";
@@ -7,14 +8,13 @@ export function Header() {
   return (
     <header className={styles.wrap}>
       <nav className={styles.nav} aria-label="Primary">
-        {/* "#top" always scrolls to the top of the document, no matching id needed */}
-        <a href="#top" className={styles.logo} aria-label={`${site.name}, back to top`}>
+        <Link href="/" className={styles.logo} aria-label={`${site.name}, home`}>
           <span aria-hidden="true">
             <span className={styles.bracket}>&lt;</span>simpi
             <span className={styles.bracket}>&nbsp;/&gt;</span>
             <span className={styles.star}>✦</span>
           </span>
-        </a>
+        </Link>
 
         <ul className={styles.links}>
           {site.nav.map((item) => (
