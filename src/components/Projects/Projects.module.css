@@ -1,0 +1,217 @@
+/* Status card */
+.status {
+  max-width: 860px;
+}
+
+.git {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.prompt {
+  color: var(--color-matcha);
+}
+
+.dim {
+  color: var(--color-subtle);
+}
+
+.title {
+  margin: 18px 0 12px;
+  font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+  line-height: 1.1;
+}
+
+.text {
+  max-width: 620px;
+  color: var(--color-muted);
+}
+
+.cta {
+  margin-top: 24px;
+}
+
+/* Ghost cards: a dashed, dimmed preview of the project grid */
+.ghosts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.ghost {
+  overflow: hidden;
+  border: var(--border-width) dashed var(--line);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--color-surface) 50%, transparent);
+}
+
+.cover {
+  display: grid;
+  place-items: center;
+  height: 170px;
+  border-bottom: var(--border-width) dashed var(--line);
+  opacity: 0.75;
+}
+
+.ghostBody {
+  display: grid;
+  gap: 10px;
+  padding: 22px 24px 26px;
+}
+
+.ghostBody b,
+.browserBody b {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-surface-2);
+}
+
+.soon {
+  justify-self: start;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--color-matcha);
+}
+
+/* Cover art — still by default (calm motion), animates while hovered */
+.pods {
+  display: grid;
+  grid-template-columns: repeat(6, 20px);
+  gap: 9px;
+}
+
+.pods i {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: var(--color-surface-2);
+}
+
+.pods i:nth-child(3n + 1) {
+  background: var(--color-matcha);
+}
+
+.pods i:nth-child(4n + 2) {
+  background: var(--color-rose);
+}
+
+.browser {
+  width: 200px;
+  overflow: hidden;
+  border: var(--border-width) solid var(--line);
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.browserBar {
+  display: flex;
+  gap: 5px;
+  padding: 8px 10px;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.browserBar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-border);
+}
+
+.browserBody {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+}
+
+.browserBody .accentBar {
+  width: 45%;
+  height: 12px;
+  background: var(--color-matcha);
+}
+
+.browserRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.browserRow b {
+  height: 32px;
+  border-radius: 7px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 96px;
+}
+
+.bars i {
+  width: 15px;
+  border-radius: 5px 5px 2px 2px;
+  background: var(--color-matcha);
+  transform-origin: bottom;
+}
+
+.bars i:nth-child(3n) {
+  background: var(--color-rose);
+}
+
+.ghost:hover .pods i {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.ghost:hover .pods i:nth-child(odd) {
+  animation-delay: -1.2s;
+}
+
+.ghost:hover .bars i {
+  animation: grow 1.4s ease-in-out infinite alternate;
+}
+
+.ghost:hover .bars i:nth-child(odd) {
+  animation-delay: -0.7s;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleY(0.55);
+  }
+}
+
+@media (max-width: 960px) {
+  .ghosts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ghost:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .ghosts {
+    grid-template-columns: 1fr;
+  }
+
+  /* One ghost card is enough on phones */
+  .ghost:not(:first-child) {
+    display: none;
+  }
+}

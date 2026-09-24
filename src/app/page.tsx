@@ -1,14 +1,12 @@
 import { About } from "@/components/About/About";
 import { Experience } from "@/components/Experience/Experience";
 import { Hero } from "@/components/Hero/Hero";
+import { Projects } from "@/components/Projects/Projects";
+import { Skills } from "@/components/Skills/Skills";
 import styles from "./page.module.css";
 
-// Sections still to build — each is replaced by its real component in Milestones 5–6.
-const upcoming = [
-  { id: "projects", index: 3, label: "Work" },
-  { id: "skills", index: 4, label: "Skills" },
-  { id: "contact", index: 5, label: "Contact" },
-];
+// Sections still to build — replaced by its real component in Milestone 6.
+const upcoming = [{ id: "contact", index: 5, label: "Contact" }];
 
 export default function Home() {
   return (
@@ -16,6 +14,8 @@ export default function Home() {
       <Hero />
       <About />
       <Experience />
+      <Projects />
+      <Skills />
       {upcoming.map((section) => (
         <section key={section.id} id={section.id} className={`container ${styles.stub}`}>
           <p className="eyebrow">

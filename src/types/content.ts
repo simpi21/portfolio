@@ -60,6 +60,13 @@ export type Role = {
   message?: string;
 };
 
+export type SkillGroup = {
+  /** Identifier used as the property name in the code view. */
+  key: string;
+  label: string;
+  items: string[];
+};
+
 export type AboutContent = {
   /** Paragraphs support `**bold**` emphasis. */
   paragraphs: string[];

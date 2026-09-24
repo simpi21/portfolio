@@ -1,0 +1,126 @@
+.toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: -24px 0 28px;
+}
+
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  box-shadow: 3px 3px 0 var(--shadow-matcha);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.toggle button {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  color: var(--color-muted);
+  transition:
+    background var(--duration) ease,
+    color var(--duration) ease;
+}
+
+.toggle button[aria-pressed="true"] {
+  background: var(--color-matcha);
+  color: var(--color-ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.grid[hidden],
+.code[hidden] {
+  display: none;
+}
+
+.groupLabel {
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.matcha {
+  color: var(--color-matcha);
+}
+
+.rose {
+  color: var(--color-rose);
+}
+
+.code {
+  padding: 30px 32px;
+  overflow-x: auto;
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  box-shadow: 6px 6px 0 var(--shadow-matcha);
+  font-family: var(--font-mono);
+  font-size: 14.5px;
+  line-height: 1.9;
+  white-space: pre-wrap;
+  animation: appear 0.4s var(--ease-out);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    translate: 0 8px;
+  }
+}
+
+/* Each code line is a block; continuation lines hang 2ch deeper than the first */
+.line {
+  display: block;
+  padding-left: 2ch;
+  text-indent: -2ch;
+}
+
+.indent {
+  padding-left: 4ch;
+}
+
+.keyword {
+  color: var(--color-rose);
+}
+
+.property {
+  color: var(--color-matcha);
+}
+
+.string {
+  color: color-mix(in srgb, var(--color-text) 85%, var(--color-matcha));
+}
+
+.comment {
+  color: var(--color-subtle);
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .toolbar {
+    justify-content: flex-start;
+    margin-top: -12px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code {
+    padding: 22px;
+    font-size: 12.5px;
+  }
+}
